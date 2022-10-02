@@ -25,9 +25,9 @@ int[] GetArray(int size, int minValue, int maxValue)
 }*/
 
 
-// Задайте одномерный массив, заполненый случайными числами. Найдите сумму элементов, стоящих на нечетных позициях.
+//  Задача 2. Задайте одномерный массив, заполненый случайными числами. Найдите сумму элементов, стоящих на нечетных позициях.
 
-/*int[] array = GetArray(10, -10, 10);
+/*int[] array = GetArray (10, -10, 10);
 Console.WriteLine($"[{String.Join(", ", array)}] -> Сумма элементов на нечетных позициях {Num()}");
 
 int Num()
@@ -51,3 +51,35 @@ int[] GetArray(int size, int minValue, int maxValue)
     }
     return res;
 }*/
+
+// Задача 3. Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+
+double[] array = GetArray(8, 1, 20);
+Console.WriteLine($"[{String.Join(", ", array)}]");
+Console.WriteLine($"Разница между максимальным и минимальными элементами {differebnce()}");
+
+double differebnce()
+{
+    double minNum = array[0];
+    double maxNum = array[0];
+
+    for(int i =1; i < array.Length; i++)
+    {
+       if(minNum > array[i])
+       minNum = array[i];
+       if(maxNum < array[i])
+        maxNum = array[i];
+    }
+    return  maxNum - minNum;
+}
+
+double[] GetArray(int size, int minValue, int maxValue)
+{
+    double[] res = new double[size];
+    for(int i = 0; i < size; i++)
+    {
+        res[i] = new Random().Next(minValue, maxValue + 1);
+    }
+    return res;
+}
